@@ -4,6 +4,7 @@ import 'package:flutter_ecommerce/screens/cart_screen.dart';
 import 'package:flutter_ecommerce/screens/product_detail_screen.dart';
 import 'package:flutter_ecommerce/screens/products_overview_screen.dart';
 import 'package:provider/provider.dart';
+
 import 'providers/products_provider.dart';
 
 void main() {
