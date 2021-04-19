@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../providers/product.dart';
-import '../providers/product.dart';
-import '../providers/product.dart';
-import '../providers/product.dart';
 
 class EditProductScreen extends StatefulWidget {
   static const routeName = '/edit-product';
@@ -142,11 +139,11 @@ class _EditProductScreenState extends State<EditProductScreen> {
                     child: _imageUrlController.text.isEmpty
                         ? Text('enter url')
                         : FittedBox(
-                      child: Image.network(
-                        _imageUrlController.text,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
+                            child: Image.network(
+                              _imageUrlController.text,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
                   ),
                   Expanded(
                     child: TextFormField(
