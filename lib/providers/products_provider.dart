@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'product.dart';
+import 'product.dart';
+import 'product.dart';
 
 class Products with ChangeNotifier {
   final List<Product> loadedProducts = [
@@ -61,8 +63,16 @@ class Products with ChangeNotifier {
     return _items.where((prodItem) => prodItem.isFavorite).toList();
   }
 
-  void addProduct() {
-    // _items.add(value);
+  void addProduct(Product product) {
+    final newProduct = Product(
+      id: DateTime.now().toString(),
+      title: product.title,
+      description: product.description,
+      price: product.price,
+      imgUrl: product.imgUrl,
+    );
+    _items.add(newProduct);
+    // _items.insert(0, newProduct);
     notifyListeners();
   }
 
