@@ -61,6 +61,7 @@ class Products with ChangeNotifier {
     return _items.where((prodItem) => prodItem.isFavorite).toList();
   }
 
+//saving new products
   void addProduct(Product product) {
     final newProduct = Product(
       id: DateTime.now().toString(),
