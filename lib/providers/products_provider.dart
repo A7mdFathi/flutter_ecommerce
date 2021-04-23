@@ -63,11 +63,11 @@ class Products with ChangeNotifier {
   }
 
 //saving new products
-  void addProduct(Product product) {
+  Future<void> addProduct(Product product) {
     const url = 'https://easyorder-25c51.firebaseio.com/products.json';
-    http
+   return http
         .post(
-      url,
+       url,
       body: json.encode({
         'title': product.title,
         'description': product.description,
@@ -90,7 +90,7 @@ class Products with ChangeNotifier {
     });
   }
 
-   Product findById(String id) {
+  Product findById(String id) {
     return _items.firstWhere((prod) => prod.id == id);
   }
 
