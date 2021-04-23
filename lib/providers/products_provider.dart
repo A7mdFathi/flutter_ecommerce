@@ -62,6 +62,19 @@ class Products with ChangeNotifier {
     return _items.where((prodItem) => prodItem.isFavorite).toList();
   }
 
+
+  Future<void> fetchAndSetProducts()async {
+    const url = 'https://easyorder-25c51.firebaseio.com/products.json';
+ try{
+ final response = await http.get(url);
+
+
+ }catch(error){
+   throw (error);
+ }
+  }
+
+
 //saving new products
   Future<void> addProduct(Product product) async {
     const url = 'https://easyorder-25c51.firebaseio.com/products.json';
