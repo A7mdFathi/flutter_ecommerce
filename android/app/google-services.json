@@ -1,0 +1,143 @@
+{
+  "project_info": {
+    "project_number": "87903544008",
+    "firebase_url": "https://easyorder-25c51.firebaseio.com",
+    "project_id": "easyorder-25c51",
+    "storage_bucket": "easyorder-25c51.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:87903544008:android:9fa8518a7d9d6b631bfbfd",
+        "android_client_info": {
+          "package_name": "com.example.flutter_ecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "87903544008-9np8gpg8t8mkjkusqcc6rjq2breil90d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flutter_ecommerce",
+            "certificate_hash": "3f13595876d8835781e537c38b4a362f670cf4e2"
+          }
+        },
+        {
+          "client_id": "87903544008-76a58g1qbpqunjo206k4knrcu9tiogro.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJ_9eZJrpZL-VRLR_32WcNS_b31i6tgwA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "87903544008-76a58g1qbpqunjo206k4knrcu9tiogro.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "87903544008-sa05c0iqeiodc61npne9tjmsf7fqjlv5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterSignInGoogle"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:87903544008:android:4b5cc84ae30f8b551bfbfd",
+        "android_client_info": {
+          "package_name": "com.example.login_firebase_bloc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "87903544008-quvlrav9v417t0ibkg7it7pjthgg3dvm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.login_firebase_bloc",
+            "certificate_hash": "21b66d6c2ca00559cb55187cf86bad408b6b4e0b"
+          }
+        },
+        {
+          "client_id": "87903544008-76a58g1qbpqunjo206k4knrcu9tiogro.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJ_9eZJrpZL-VRLR_32WcNS_b31i6tgwA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "87903544008-76a58g1qbpqunjo206k4knrcu9tiogro.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "87903544008-sa05c0iqeiodc61npne9tjmsf7fqjlv5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterSignInGoogle"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:87903544008:android:2318fb96131005fb1bfbfd",
+        "android_client_info": {
+          "package_name": "com.santosenoque.shop_app_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "87903544008-5odeb8bqdj9q24nlebmsrq363erva111.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.santosenoque.shop_app_admin",
+            "certificate_hash": "21b66d6c2ca00559cb55187cf86bad408b6b4e0b"
+          }
+        },
+        {
+          "client_id": "87903544008-76a58g1qbpqunjo206k4knrcu9tiogro.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJ_9eZJrpZL-VRLR_32WcNS_b31i6tgwA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "87903544008-76a58g1qbpqunjo206k4knrcu9tiogro.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "87903544008-sa05c0iqeiodc61npne9tjmsf7fqjlv5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterSignInGoogle"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
