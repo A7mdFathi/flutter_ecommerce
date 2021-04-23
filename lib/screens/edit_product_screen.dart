@@ -21,7 +21,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
     title: '',
     description: '',
     price: 0,
-    imgUrl: '',
+    imageUrl: '',
   );
   var _isLoading = false;
   var _isInit = true;
@@ -62,7 +62,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
           // 'imageUrl': _editiedProduct.imgUrl,
           'imageUrl': '',
         };
-        _imageUrlController.text = _editiedProduct.imgUrl;
+        _imageUrlController.text = _editiedProduct.imageUrl;
       }
     }
     _isInit = false;
@@ -175,7 +175,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                           title: value,
                           description: _editiedProduct.description,
                           price: _editiedProduct.price,
-                          imgUrl: _editiedProduct.imgUrl,
+                          imageUrl: _editiedProduct.imageUrl,
                         );
                       },
                     ),
@@ -194,7 +194,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                           title: _editiedProduct.title,
                           description: _editiedProduct.description,
                           price: double.parse(value),
-                          imgUrl: _editiedProduct.imgUrl,
+                          imageUrl: _editiedProduct.imageUrl,
                         );
                       },
                       validator: (value) {
@@ -230,7 +230,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                           title: _editiedProduct.title,
                           description: value,
                           price: _editiedProduct.price,
-                          imgUrl: _editiedProduct.imgUrl,
+                          imageUrl: _editiedProduct.imageUrl,
                         );
                       },
                       validator: (value) {
@@ -284,7 +284,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                                 title: _editiedProduct.title,
                                 description: _editiedProduct.description,
                                 price: _editiedProduct.price,
-                                imgUrl: value,
+                                imageUrl: value,
                               );
                             },
                             validator: (value) {
