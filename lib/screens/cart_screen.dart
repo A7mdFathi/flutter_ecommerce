@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/providers/cart.dart' show Cart;
 import 'package:flutter_ecommerce/providers/orders.dart';
+import 'package:flutter_ecommerce/widgets/app_drawer.dart';
 import 'package:provider/provider.dart';
 
 import '../widgets/cart_item.dart' as ci;
@@ -63,12 +64,13 @@ class CartScreen extends StatelessWidget {
               cart.items.values.toList()[index].id,
               cart.items.keys.toList()[index],
               cart.items.values.toList()[index].price,
-              cart.items.values.toList()[index].quantiy,
+              cart.items.values.toList()[index].quantity,
               cart.items.values.toList()[index].title,
             ),
           )),
         ],
       ),
+      drawer: AppDrawer(),
     );
   }
 }

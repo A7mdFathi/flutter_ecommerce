@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 class CartItem {
   final String id;
   final String title;
-  final int quantiy;
+  final int quantity;
   final double price;
 
   CartItem({
     @required this.id,
     @required this.title,
-    @required this.quantiy,
+    @required this.quantity,
     @required this.price,
   });
 }
@@ -28,7 +28,7 @@ class Cart with ChangeNotifier {
   double get totalAmount {
     var total = 0.0;
     _items.forEach((key, cartItem) {
-      total += cartItem.price * cartItem.quantiy;
+      total += cartItem.price * cartItem.quantity;
     });
     return total;
   }
@@ -44,7 +44,7 @@ class Cart with ChangeNotifier {
           (existingItem) => CartItem(
                 id: existingItem.id,
                 title: existingItem.title,
-                quantiy: existingItem.quantiy + 1,
+                quantity: existingItem.quantity + 1,
                 price: existingItem.price,
               ));
     } else {
@@ -54,7 +54,7 @@ class Cart with ChangeNotifier {
                 id: DateTime.now().toString(),
                 title: title,
                 price: price,
-                quantiy: 1,
+                quantity: 1,
               ));
     }
 
@@ -70,13 +70,13 @@ class Cart with ChangeNotifier {
     if (!_items.containsKey(prodId)) {
       return;
     }
-    if (_items[prodId].quantiy > 1) {
+    if (_items[prodId].quantity > 1) {
       _items.update(
           prodId,
           (existingCartItem) => CartItem(
                 id: existingCartItem.id,
                 title: existingCartItem.title,
-                quantiy: existingCartItem.quantiy - 1,
+                quantity: existingCartItem.quantity - 1,
                 price: existingCartItem.price,
               ));
     } else {

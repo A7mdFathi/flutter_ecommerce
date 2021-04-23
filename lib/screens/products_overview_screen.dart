@@ -22,8 +22,6 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // final prodcutsContainer = Provider.of<Products>(context, listen: false);
-
     return Scaffold(
       appBar: AppBar(
         title: Text('MyShop'),
@@ -32,10 +30,8 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
             onSelected: (FilterOptions selectedValue) {
               setState(() {
                 if (selectedValue == FilterOptions.Favorites) {
-                  // prodcutsContainer.showFavoriteOnly();
                   _showOnlyFavorites = true;
                 } else {
-                  // prodcutsContainer.showAll();
                   _showOnlyFavorites = false;
                 }
               });
