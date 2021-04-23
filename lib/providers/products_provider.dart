@@ -63,20 +63,20 @@ class Products with ChangeNotifier {
   }
 
 //saving new products
-  Future<void> addProduct(Product product) {
+  Future<void> addProduct(Product product) async {
     const url = 'https://easyorder-25c51.firebaseio.com/products.json';
-   return http
-        .post(
-       url,
-      body: json.encode({
-        'title': product.title,
-        'description': product.description,
-        'imageUrl': product.imgUrl,
-        'price': product.price,
-        'isFavorite': product.isFavorite,
-      }),
-    )
-        .then((response) {
+    try {
+      final response = await http.post(
+        url,
+        body: json.encode({
+          'title': product.title,
+          'description': product.description,
+          'imageUrl': product.imgUrl,
+          'price': product.price,
+          'isFavorite': product.isFavorite,
+        }),
+      );
+
       final newProduct = Product(
         id: json.decode(response.body)['name'],
         title: product.title,
@@ -87,10 +87,10 @@ class Products with ChangeNotifier {
       _items.add(newProduct);
       // _items.insert(0, newProduct);
       notifyListeners();
-    }).catchError((error){
+    } catch (error) {
       print(error);
       throw error;
-   });
+    }
   }
 
   Product findById(String id) {
