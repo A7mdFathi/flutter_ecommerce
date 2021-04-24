@@ -17,7 +17,7 @@ class ProductItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final productProvider = Provider.of<Product>(context, listen: false);
     final cartProvider = Provider.of<Cart>(context, listen: false);
-    final authData = Provider.of<Auth>(context, listen: false).token;
+    final authData = Provider.of<Auth>(context, listen: false);
     return ClipRRect(
       borderRadius: BorderRadius.circular(10.0),
       child: GridTile(
@@ -42,7 +42,10 @@ class ProductItem extends StatelessWidget {
               ),
               color: Theme.of(context).accentColor,
               onPressed: () {
-                product.toggleFavoriteStatus(authData);
+                product.toggleFavoriteStatus(
+                  authData.token,
+                  authData.userId,
+                );
               },
             ),
           ),
