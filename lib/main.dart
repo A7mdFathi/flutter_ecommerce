@@ -8,6 +8,7 @@ import 'package:flutter_ecommerce/screens/edit_product_screen.dart';
 import 'package:flutter_ecommerce/screens/orders_screen.dart';
 import 'package:flutter_ecommerce/screens/product_detail_screen.dart';
 import 'package:flutter_ecommerce/screens/products_overview_screen.dart';
+import 'package:flutter_ecommerce/screens/splash_screen.dart';
 import 'package:flutter_ecommerce/screens/user_product_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProxyProvider<Auth, Products>(
           update: (context, auth, previousProducts) => Products(
             auth.token,
-           auth.userId ,
+            auth.userId,
             previousProducts == null ? [] : previousProducts.items,
           ),
         ),
@@ -36,7 +37,6 @@ class MyApp extends StatelessWidget {
           value: Cart(),
         ),
         ChangeNotifierProxyProvider<Auth, Orders>(
-
           update: (context, auth, previousOrders) => Orders(
             auth.token,
             auth.userId,
@@ -45,13 +45,21 @@ class MyApp extends StatelessWidget {
         )
       ],
       child: Consumer<Auth>(
-        builder: (ctx, authData, _) => MaterialApp(
+        builder: (ctx, auth, _) => MaterialApp(
           title: 'Shop App',
           theme: ThemeData(
               primarySwatch: Colors.purple,
               accentColor: Colors.deepOrange,
               fontFamily: 'Lato'),
-          home: authData.isAuth ? ProductsOverviewScreen() : AuthScreen(),
+          home: auth.isAuth
+              ? ProductsOverviewScreen()
+              : FutureBuilder(
+                  future: auth.tryAutoLogin(),
+                  builder: (context, authResultSnapshot) =>
+                      authResultSnapshot.connectionState ==
+                              ConnectionState.waiting
+                          ? SplashScreen()
+                          : AuthScreen()),
           routes: {
             ProductDetailScreen.routeName: (context) => ProductDetailScreen(),
             CartScreen.routeName: (context) => CartScreen(),
