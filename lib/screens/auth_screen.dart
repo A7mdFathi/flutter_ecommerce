@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/models/http_exception.dart';
 import 'package:flutter_ecommerce/providers/auth.dart';
+import 'package:flutter_ecommerce/screens/products_overview_screen.dart';
 import 'package:provider/provider.dart';
 
 enum AuthMode { Signup, Login }
