@@ -123,23 +123,18 @@ class Products with ChangeNotifier {
   }
 
   Future<void> deleteProduct(String id) async {
-
     final url = 'https://easyorder-25c51.firebaseio.com/products/$id.json';
     final existingProductIndex = _items.indexWhere(((prod) => prod.id == id));
     var existingProduct = _items[existingProductIndex];
     _items.removeAt(existingProductIndex);
     notifyListeners();
-   final response=await http.delete(url);
-      if(response.statusCode>=400){
-        _items.insert(existingProductIndex, existingProduct);
-        notifyListeners();
-        throw HttpException('could not delete product');
-      }
-      existingProduct = null;
-
-
-
-
+    final response = await http.delete(url);
+    if (response.statusCode >= 400) {
+      _items.insert(existingProductIndex, existingProduct);
+      notifyListeners();
+      throw HttpException('could not delete product');
+    }
+    existingProduct = null;
   }
 
   Future<void> updateProduct(String id, Product newProduct) async {
