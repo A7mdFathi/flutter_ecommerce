@@ -203,12 +203,12 @@ class _AuthCardState extends State<AuthCard>
       setState(() {
         _authMode = AuthMode.Signup;
       });
-      _controller.forward();
+      // _controller.forward();
     } else {
       setState(() {
         _authMode = AuthMode.Login;
       });
-      _controller.reverse();
+      // _controller.reverse();
     }
   }
 
@@ -220,18 +220,15 @@ class _AuthCardState extends State<AuthCard>
         borderRadius: BorderRadius.circular(10.0),
       ),
       elevation: 8.0,
-      child: AnimatedBuilder(
-        animation: _heightAnimation,
-        builder: (context, ch) => Container(
-          // _authMode == AuthMode.Signup ? 320 : 260,
-          height: _heightAnimation.value.height,
-          constraints:
-              // _authMode == AuthMode.Signup ? 320 : 260)
-              BoxConstraints(minHeight: _heightAnimation.value.height),
-          width: deviceSize.width * 0.75,
-          padding: EdgeInsets.all(16.0),
-          child: ch,
-        ),
+      child: AnimatedContainer(
+        duration: Duration(milliseconds: 300),
+        curve: Curves.easeIn,
+        // _heightAnimation.value.height,
+        height: _authMode == AuthMode.Signup ? 320 : 260,
+        constraints:
+            BoxConstraints(minHeight: _authMode == AuthMode.Signup ? 320 : 260),
+        width: deviceSize.width * 0.75,
+        padding: EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
           child: SingleChildScrollView(
